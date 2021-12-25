@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+}
+html{
+    font-size: 62.5%;
+}
+
+.navbar{
+    width: 100%;
+    height: 14rem;
+    background-color: #000;
+    position: fixed;
+    top: -15rem; 
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: .2rem .2rem .2rem #000;
+    transition: .4s;
+}
+.navbar.change{
+    top: 0;
+    transition: top .4s .2s;
+}
+.navbarLink{
+    color: #aaa;
+    margin: 0 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: color .3s, opacity .2s;
+    opacity: 0;
+}
+.change .navbarLink {
+    opacity: 1;
+}
+.change .navbarLink:nth-child(1){
+    transition: opacity .4s .2s, color .3s;
+}
+.change .navbarLink:nth-child(2){
+    transition: opacity .4s .6s, color .3s;
+}
+.change .navbarLink:nth-child(3){
+    transition: opacity .4s .7s, color .3s;
+}
+.change .navbarLink:nth-child(4){
+    transition: opacity .4s .8s, color .3s;
+}
+.change .navbarLink:nth-child(5){
+    transition: opacity .4s .9s, color .3s;
+}
+.navbarLink i{
+    font-size: 7rem;
+}
+.navbarLink span{
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: .5rem;
+    margin-top: .5rem;
+}
+.navbarLink:hover{
+    color: white;
+}
+.menu{
+    width: 4rem;
+    height: 6rem;
+    background-color: #000;
+    position: fixed;
+    top: 1rem;
+    left: 5rem;
+    border-radius: 30rem 30rem 15rem 15rem;
+    box-shadow: .1rem .1rem .1rem #000, -.1rem -.1rem -.1rem #000;
+    cursor: pointer;
+    transition: top .4s .2s;
+    z-index: 100;
+}
+.menu.change {
+    top: 15rem;
+    transition: top .7s;
+}
+.menu::before{
+    content: "";
+    width: 0.3rem;
+    height: 15rem;
+    background-color: #000;
+    position: absolute;
+    top: -15rem;
+    left: calc(50% - .15rem);
+    box-shadow: .1rem .1rem .1rem #000;
+}
+
+.section1 {
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.section-heading {
+    font-size: 12rem;
+    font-weight: 900;
+    color: white;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: .5rem;
+    text-shadow: 0.3rem 0.3rem 0.3rem #000;
+}
+.section1icons i {
+    font-size: 35rem;
+    color: #a79a2d;
+    position: absolute;
+    transform: translate(-50%, -50%) scale(0);
+    text-shadow: 0.2rem 0.2rem 0.2rem;
+    transition: transform .3s;
+}
+.section1icons i.change{
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform .3s .3s;
+}
+
+.section2 {
+    width: 100%;
+    height: 100vh;
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10rem 0;
+}
+.cardContain {
+    display: flex;
+    justify-content: space-evenly;
+}
+.card{
+    width: 30rem;
+    background-color: #a79a2d;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1rem 1rem 1rem #000;
+    position: relative;
+    transform: rotateY(20deg) skewX(-2deg);
+    transition: transform .5s, box-shadow .5s;
+}
+
+.card::before{
+    content: "";
+    height: 100%;
+    width: 1rem;
+    background-color: #817824;
+    position: absolute;
+    top: 0;
+    left: -1rem;
+    transform: skewY(45deg);
+    transform-origin: right;
+    box-shadow: -.1rem -.1rem -.1rem #000;
+}
+.card::after{
+    content: "";
+    height: 1rem;
+    width: 100%;
+    background-color: #8f8317;
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    transform: skewX(45deg);
+    transform-origin: bottom;
+    box-shadow: -.1rem -.1rem -.1rem #000;
+}
+
+.card:hover {
+    transform: rotateY(20deg) skewX(-2deg) translateY(-3rem);
+    box-shadow: 2rem 2rem 2rem #000;
+}
+
+.cardImg{
+    width: 100%;
+}
+.cardName {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    color: #111;
+    margin: 2rem 0;
+    text-shadow: .15rem .15rem .15rem #000;
+}
+.cardBtn {
+    width: 70%;
+    background-color: #111;
+    color: #888;
+    border-radius: 5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: .2rem;
+    text-transform: capitalize;
+    border: none;
+    padding: .5rem 0;
+    cursor: pointer;
+    box-shadow: -.2rem -.2rem -.2rem #000;
+}
+
+.section3 {
+    background-color: #333;
+    padding: 5rem 0;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10rem;
+}
+.galleryLink{
+    position: relative;
+    margin: 4rem 1rem;
+}
+
+.galleryLink::before{
+    content: "";
+    position: absolute;
+    top: 2vw;
+    left: 80%;
+    width: 0.2rem;
+    height: 0;
+    z-index: 10;
+    background-color: white;
+    transition: height .5s;
+}
+
+.galleryLink:hover::before{
+    height: 80%;
+}
+
+.galleryLink::after{
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 2rem;
+    width: 0;
+    height: .2rem;
+    background-color: white;
+    transition: width .5s;
+}
+
+.galleryLink:hover::after{
+    width: 90%;
+}
+
+.foodImg{
+    width: 24vw;
+    height: 15vw;
+    object-fit: cover;
+    box-shadow: .3rem .3rem .1rem #e92929, .5rem .5rem .1rem #a2e946, .7rem .7rem .1rem #297ce9, .9rem .9rem .1rem #e92999;
+    transition: all .5s;
+}
+
+.galleryLink:hover .foodImg {
+    box-shadow: 1rem 1rem .1rem #e92929, 2rem 2rem .1rem #a2e946, 3rem 3rem .1rem #297ce9, 4rem 4rem .1rem #e92999;
+    filter: blur(.5rem);
+    transform: scale(1.1);
+}
+
+.foodName{
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: white;
+    width: 0;
+    overflow: hidden;
+    transition: width .3s;
+}
+
+.galleryLink:hover .foodName {
+    width: 100%;
+    transition: width 1.5s .5s;
+}
+
+.foodDesc{
+    position: absolute;
+    bottom: 3vw;
+    left: 2rem;
+    width: 70%;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s;
+}
+
+.galleryLink:hover .foodDesc{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s 1s;
+}
+
+
+.section4{
+    width: 100%;
+    height: 30vh;
+    background-color: #222;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 3rem 0;
+    position: relative;
+}
+.section4Text {
+    text-transform: uppercase;
+}
+.section4Head{
+    font-size: 4rem;
+    font-weight: 900;
+    color: #a79a2d;
+}
+.section4Para{
+    font-size: 1.5rem;
+    color: #888;
+}
+.sign{
+    display: flex;
+    align-items: center;
+}
+.signIn{
+    width: 35rem;
+    height: 5rem;
+    padding: 1rem;
+    border: .2rem solid #a79a2d;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: .1rem;
+    color: #a79a2d;
+}
+.signIn::placeholder {
+    color: #a79a2d;
+}
+.signBtn{
+    position: relative;
+    left: -4rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: #333;
+    color: #a79a2d;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.copyright{
+    position: absolute;
+    bottom: 3rem;
+    font-size: 1.7rem;
+    font-weight: 200;
+    color: #eee;
+    letter-spacing: 0.1rem;
+    border-top: .1rem solid #888;
+    padding-top: 6rem;
+    width: 100%;
+    text-align: center;
+}
+
+
+@media (max-width: 1400px) {
+    html{
+        font-size: 50%;
+    }
+    .section2{
+        height: auto;
+        padding: 10rem 0 12rem 0;
+    }
+    .cardContain{
+        margin-top: 10rem;
+    }
+    .galleryLink{
+        width: 40rem;
+        height: 25rem;
+        margin: 5rem;
+    }
+    .foodImg{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .section-heading{
+        font-size: 9rem;
+        margin: 0 5rem;
+    }
+    .section1icons{
+        font-size: 25rem;
+    }
+    .cardContain{
+        flex-wrap: wrap;
+    }
+    .card{
+        margin: 5rem;
+    }
+    .section4{
+        height: 30rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbarLink{
+        margin: 2rem;
+    }
+    .navbarLink i{
+        font-size: 4rem;
+    }
+    .navbarLink span{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .section-heading{
+        font-size: 7rem;
+        margin: 0 10rem;
+    }
+    .section1icons i{
+        font-size: 20rem;
+    }
+    .menu{
+        left: 2rem;
+    }
+    .section4{
+        height: 40rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .section4Text{
+        margin-bottom: 8rem;
+    }
+}
+@media (max-width: 550px) {
+    html{
+        font-size: 40%;
+    }
+    .navbarLink{
+        margin: 0 .7rem;
+    }
+}
